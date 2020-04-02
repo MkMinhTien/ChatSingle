@@ -37,6 +37,11 @@
             $("#LogMsg").click(function () {
                 socket.emit("Logout");
             });
+
+            socket.on("Out", function (data) {
+                $("#Login").show(2000);
+                $("#Chat").hide(1000);
+            });
         });
     </script>
 </head>

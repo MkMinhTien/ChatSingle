@@ -39,6 +39,8 @@ io.on("connection", function (socket) {
         NameList.splice(
             NameList.indexOf(socket.Name), 1
         );
+
+        socket.emit("Out");
     });
 });
 
