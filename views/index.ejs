@@ -31,7 +31,7 @@
             });
 
             socket.on("DataMSG", function (data) {
-                $("#Data").append("<b style='color: aqua'>" + data.id + "</b> : " + data.c);
+                $("#Data").append("<div><b style='color: aqua'>" + data.id + "</b> : " + data.c + "</div>");
             });
 
             $("#LogMsg").click(function () {
@@ -47,9 +47,7 @@
         <input type="button" id="SetName" value="Name">
     </div>
     <div id="Chat">
-        <div>
-            <h3 id="Data"></h3>
-        </div>
+        <h3 id="Data"></h3>
 
         <input type="text" id="TextChat">
         <input type="button" id="SendMsg" value="Send">
