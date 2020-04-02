@@ -10,8 +10,8 @@
     <script>
         var socket = io();
         $(document).ready(function () {
-            $("#Login").show();
-            $("#Chat").hide();
+            $("#Login").show(2000);
+            $("#Chat").hide(1000);
 
             $("#SetName").click(function () {
                 socket.emit("SetN", $("#TextName").val());
@@ -22,8 +22,8 @@
             });
 
             socket.on("NameV", function (data) {
-                $("#Login").show();
-                $("#Chat").hide();
+                $("#Login").hide(1000);
+                $("#Chat").show(2000);
             });
 
             $("#SendMsg").click(function () {
