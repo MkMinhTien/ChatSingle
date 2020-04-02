@@ -28,9 +28,9 @@ io.on("connection", function (socket) {
     });
 
     socket.on("SendMSG", function (data) {
-        console.log("New chat: " + socket.id + " : " + data);
+        console.log("New chat: " + socket.Name + " : " + data);
 
-        io.sockets.emit("DataMSG", {id:socket.id, c:data});
+        io.sockets.emit("DataMSG", {id:socket.Name, c:data});
     });
 
     socket.on("Logout", function () {
