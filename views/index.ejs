@@ -10,6 +10,14 @@
     <script>
         var socket = io();
         $(document).ready(function () {
+            $("#SetName").click(function () {
+                socket.emit("SetN", $("#TextName").val());
+            });
+
+            socket.on("NameX", function (data) {
+                alert("Try Again");
+            });
+
             $("#SendMsg").click(function () {
                 socket.emit("SendMSG", $("#TextChat").val());
             });

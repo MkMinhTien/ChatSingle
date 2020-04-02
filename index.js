@@ -10,8 +10,20 @@ var io = require("socket.io")(server);
 
 server.listen(process.env.PORT || 3000);
 
+var NameList = [];
+
 io.on("connection", function (socket) {
     console.log("New user: " + socket.id);
+
+    socket.on("SetN", function (data) {
+        console.log("New name: " + socket.id + " : " + data);
+
+        if (NameList.indexOf(data)>=0) {
+            socket.emit("NameX");
+        } else {
+            
+        }
+    });
 
     socket.on("SendMSG", function (data) {
         console.log("New chat: " + socket.id + " : " + data);
