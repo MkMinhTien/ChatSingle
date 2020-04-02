@@ -21,7 +21,9 @@ io.on("connection", function (socket) {
         if (NameList.indexOf(data)>=0) {
             socket.emit("NameX");
         } else {
-            
+            NameList.push(data);
+            socket.Name = data;
+            socket.emit("NameV", data);
         }
     });
 
@@ -29,6 +31,14 @@ io.on("connection", function (socket) {
         console.log("New chat: " + socket.id + " : " + data);
 
         io.sockets.emit("DataMSG", {id:socket.id, c:data});
+    });
+
+    socket.on("Logout", function () {
+        console.log("New logout: " + socket.id);
+
+        NameList.splice(
+            NameList.indexOf(socket.Name), 1
+        );
     });
 });
 
