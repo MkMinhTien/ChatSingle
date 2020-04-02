@@ -22,7 +22,8 @@
             });
 
             socket.on("NameV", function (data) {
-                alert("Try Again");
+                $("#Login").show();
+                $("#Chat").hide();
             });
 
             $("#SendMsg").click(function () {
