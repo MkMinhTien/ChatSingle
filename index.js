@@ -10,7 +10,7 @@ var io = require("socket.io")(server);
 
 server.listen(process.env.PORT || 3000);
 
-var NameList = [];
+var NameList = ["a"];
 
 io.on("connection", function (socket) {
     console.log("New user: " + socket.id);
