@@ -53,10 +53,4 @@ document.onkeydown = function (e) {
     if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
         return false;
     };
-    if (event.keyCode == 27) {
-        $("#LogMsg").click(function () {
-            socket.emit("Logout");
-        });
-        return false;
-    };
 };
